@@ -32,7 +32,7 @@ namespace SkillsTracker2.Controllers
 
         <h2>C#:
         <br />
-        <select name = 'C#skills' >
+        <select name = 'cSharpSkills' >
             <option value='learning basics'>Learning Basics</option>
             <option value='making apps'>Making Apps</option>
             <option value='master coder'>Master Coder</option>
@@ -41,7 +41,7 @@ namespace SkillsTracker2.Controllers
 
         <h2>JavaScript:
         <br />
-        <select name = 'JavaScriptskills' >
+        <select name = 'javaScriptskills' >
             <option value='learning basics'>Learning Basics</option>
             <option value='making apps'>Making Apps</option>
             <option value='master coder'>Master Coder</option>
@@ -50,7 +50,7 @@ namespace SkillsTracker2.Controllers
 
         <h2>Python:
         <br />
-        <select name = 'Pythonskills' >
+        <select name = 'pythonskills' >
             <option value='learning basics'>Learning Basics</option>
             <option value='making apps'>Making Apps</option>
             <option value='master coder'>Master Coder</option>
@@ -67,18 +67,20 @@ namespace SkillsTracker2.Controllers
         }
 
 
-        /*
+        
         [HttpPost]
         [Route("/skills/form")]
-        public IActionResult Skills()
+        public IActionResult Skills(string date, string cSharpSkills, string javaScriptSkills, string pythonSkills)
         {
-            return Content("<h1>{date}</h1>" +
+            string html = "<h1>" + date + "</h1>" +
                  "<ol>" +
-                    "<li>C#:{ </li>" +
-                    < li > JavaScript </ li >
-                    < li > Python </ li >
-                </ ol >);
+                 "<li>C#: " + cSharpSkills + "</li>" +
+                 "<li>JavaScript: " + javaScriptSkills + "</li>" +
+                 "<li>Python: " + pythonSkills + "</li>" +
+                 "</ol>";
+            return Content(html, "text/html");
+
         }
-        */
+        
     }
 }
